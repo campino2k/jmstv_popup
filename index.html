@@ -45,13 +45,13 @@
 				var $jmstv = function(_id ){return document.getElementById(_id)};
 				body = document.getElementsByTagName('body')[0];
 
-				stylecontent_text  = '#jmstv_ovl{font-family:Helvetica,Arial,Verdana;background-color:#000;background-color:rgba(0,0,0,0.9);position:absolute;margin:0;top:0;bottom:0;left:0;right:0; }';
-				stylecontent_text += '#jmstv_agebox{margin:50% auto;height:300px;width:500px;position:relative;top:-50%;background-color:#ddd;-webkit-border-radius:10px;padding:20px;}';
+				stylecontent_text  = '#jmstv_ovl{font-family:Helvetica,Arial,Verdana;background-color:#000;background-color:rgba(0,0,0,0.9);position:absolute;margin:0;top:0;bottom:0;left:0;right:0;}';
+				stylecontent_text += '#jmstv_agebox{margin:50% auto;height:300px;width:500px;position:relative;top:-50%;background-color:#ddd;-webkit-border-radius:10px;padding:20px;-moz-border-radius:10px;-webkit-border-radius:10px;}';
 				stylecontent_text += '#jmstv_agebox h1{}';
 				stylecontent_text += '#jmstv_agebox #yesButton{background-color:#3f3;}';
 				stylecontent_text += '#jmstv_agebox #noButton{background-color:#f33;margin-left:30px;}';
 				stylecontent_text += '#yesButton,#noButton{font-size: 20px;-moz-border-radius:5px;-webkit-border-radius:5px;border:2px solid #000;}';
-				stylecontent_text += '#jmstv_agebox h1{}';
+				stylecontent_text += '#jmstv_agebox a{display:block;color:#c00;margin-top:2em}';
 
 				style_content = document.createTextNode( stylecontent_text );
 				style = document.createElement('style');
@@ -82,10 +82,14 @@
 				appendEl(agebox_el, agebox_el_cont);
 
 				agebox_el = document.createElement('button');
+				agebox_el_cont = document.createTextNode('Ich bin unter 18!');
 				agebox_el.id = 'noButton';
 				agebox_el.onclick = function(){alert('Dann versuch dein Glück woanders!');location.href="http://google.de"};
+				appendEl(agebox_el, agebox_el_cont);
 
-				agebox_el_cont = document.createTextNode('Ich bin unter 18!');
+				agebox_el = document.createElement('a');
+				agebox_el.setAttribute('href', 'http://wiki.piratenpartei.de/Jmstv')
+				agebox_el_cont = document.createTextNode('Warum das ganze?');
 				appendEl(agebox_el, agebox_el_cont);
 				
 
